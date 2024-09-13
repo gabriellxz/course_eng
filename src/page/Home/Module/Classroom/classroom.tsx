@@ -8,10 +8,10 @@ export default function Classroom() {
     const [lesson, setLesson] = useState<any>(null);
 
     useEffect(() => {
-        const foundModule = data.find((mod) => mod.lessons.some((lesson) => lesson.id === Number(params.idAula)));
+        const foundModule = data.find((mod:any) => mod.lessons.some((lesson:any) => lesson.id === Number(params.idAula)));
 
         if (foundModule) {
-            const foundLesson = foundModule.lessons.find((lesson) => lesson.id === Number(params.idAula));
+            const foundLesson = foundModule.lessons.find((lesson:any) => lesson.id === Number(params.idAula));
             setLesson(foundLesson);
         }
     }, [params.idAula]);
